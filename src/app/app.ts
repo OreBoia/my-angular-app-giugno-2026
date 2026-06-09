@@ -1,11 +1,21 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { BaseComponent } from './features/base-component/base-component';
+import { TitleComponent } from './features/component-exercise/title-component/title-component';
+import { ParagraphComponent } from './features/component-exercise/paragraph-component/paragraph-component';
+import { ImageComponent } from './features/component-exercise/image-component/image-component';
+import { BindingComponent } from "./features/binding-component/binding-component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,
+    BaseComponent,
+    TitleComponent,
+    ParagraphComponent,
+    ImageComponent,
+    BindingComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('my-angular-app');
