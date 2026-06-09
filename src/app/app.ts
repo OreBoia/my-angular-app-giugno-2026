@@ -5,6 +5,7 @@ import { TitleComponent } from './features/component-exercise/title-component/ti
 import { ParagraphComponent } from './features/component-exercise/paragraph-component/paragraph-component';
 import { ImageComponent } from './features/component-exercise/image-component/image-component';
 import { BindingComponent } from "./features/binding-component/binding-component";
+import { DirectivesComponent } from "./features/directives-component/directives-component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import { BindingComponent } from "./features/binding-component/binding-component
     TitleComponent,
     ParagraphComponent,
     ImageComponent,
-    BindingComponent],
+    BindingComponent,
+    DirectivesComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
