@@ -1,10 +1,14 @@
+import { NgClass, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgClass, NgStyle } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
+import { HiglightDirective } from "../CustomDirectives/higlight-directive";
 
 @Component({
   selector: 'app-directives-component',
-  imports: [FormsModule, NgClass, NgStyle],
+  imports: [FormsModule,
+    NgClass,
+    NgStyle,
+    HiglightDirective],
   templateUrl: './directives-component.html',
   styleUrl: './directives-component.css',
 })

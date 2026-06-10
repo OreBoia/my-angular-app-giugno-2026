@@ -3,8 +3,8 @@
 <h2>@IF</h2>
 
 <button (click)="isVisible = !isVisible">Toogle</button>
-<p>è visibile? {{isVisible}}</p>
-@if(isVisible){
+<p customHighlight>è visibile? {{isVisible}}</p>
+@if(isVisible == true){
   <p>Questo testo appare e scompare</p>
 }
 @else
@@ -64,12 +64,12 @@
   <ul>
     @for(e of frameworks; track e; let i = $index){
       <li
-      [ngClass]="{'highlight': e === favFramework}"
+      [ngClass]="{'highligth': e == favFramework}"
       [ngStyle]="{
-        'font-weight': (i % 2 === 0 && e !== favFramework) ? 'bold': 'normal',
-        'backround-color': e !== favFramework ? 'blue' : ''
+        'font-weight': (i % 2 == 0 && e != favFramework) ? 'bold': 'normal',
+        'background-color': e != favFramework ? 'blue' : ''
       }">
-        {{i}}- {{e}}
+        {{i}} - {{e}}
       </li>
     }
   </ul>
