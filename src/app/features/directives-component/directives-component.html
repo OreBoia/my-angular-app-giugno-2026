@@ -3,7 +3,7 @@
 <h2>@IF</h2>
 
 <button (click)="isVisible = !isVisible">Toogle</button>
-<p customHighlight>è visibile? {{isVisible}}</p>
+<p [customHighlight]="true">è visibile? {{isVisible}}</p>
 @if(isVisible == true){
   <p>Questo testo appare e scompare</p>
 }

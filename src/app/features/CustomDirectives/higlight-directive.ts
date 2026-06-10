@@ -1,12 +1,20 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit } from '@angular/core';
 
 @Directive({
   selector: '[customHighlight]',
 })
-export class HiglightDirective
+export class HiglightDirective implements OnInit
 {
-  constructor(el: ElementRef)
+  @Input() customHighlight: boolean = false
+  constructor(private el: ElementRef)
   {
-    el.nativeElement.style.backgroundColor = 'yellow'
+
   }
+
+  ngOnInit(): void
+  {
+    if(this.customHighlight) this.el.nativeElement.style.backgroundColor = 'yellow'
+  }
+
+
 }
