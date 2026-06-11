@@ -9,6 +9,7 @@ import { DirectivesComponent } from "./features/directives-component/directives-
 import { RegistrationComponent } from "./features/registration-component/registration-component";
 import { LoginComponent } from "./features/login-component/login-component";
 import { ParentComponent } from "./features/InputOutputExample/parent-component/parent-component";
+import { SignalExampleComponent } from "./features/signal-example-component/signal-example-component";
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,7 @@ import { ParentComponent } from "./features/InputOutputExample/parent-component/
     ImageComponent,
     BindingComponent,
     DirectivesComponent,
-    RegistrationComponent, LoginComponent, ParentComponent],
+    RegistrationComponent, LoginComponent, ParentComponent, SignalExampleComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
