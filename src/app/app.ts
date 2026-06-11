@@ -8,6 +8,7 @@ import { BindingComponent } from "./features/binding-component/binding-component
 import { DirectivesComponent } from "./features/directives-component/directives-component";
 import { RegistrationComponent } from "./features/registration-component/registration-component";
 import { LoginComponent } from "./features/login-component/login-component";
+import { ParentComponent } from "./features/InputOutputExample/parent-component/parent-component";
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,7 @@ import { LoginComponent } from "./features/login-component/login-component";
     ImageComponent,
     BindingComponent,
     DirectivesComponent,
-    RegistrationComponent, LoginComponent],
+    RegistrationComponent, LoginComponent, ParentComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

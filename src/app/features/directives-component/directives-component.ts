@@ -1,7 +1,7 @@
 import { NgClass, NgStyle } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HiglightDirective } from "../CustomDirectives/higlight-directive";
+import { HiglightDirective } from "../custom-directives/higlight-directive";
 
 @Component({
   selector: 'app-directives-component',
