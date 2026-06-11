@@ -6,6 +6,8 @@ import { ParagraphComponent } from './features/component-exercise/paragraph-comp
 import { ImageComponent } from './features/component-exercise/image-component/image-component';
 import { BindingComponent } from "./features/binding-component/binding-component";
 import { DirectivesComponent } from "./features/directives-component/directives-component";
+import { RegistrationComponent } from "./features/registration-component/registration-component";
+import { LoginComponent } from "./features/login-component/login-component";
 
 @Component({
   selector: 'app-root',
@@ -15,7 +17,8 @@ import { DirectivesComponent } from "./features/directives-component/directives-
     ParagraphComponent,
     ImageComponent,
     BindingComponent,
-    DirectivesComponent],
+    DirectivesComponent,
+    RegistrationComponent, LoginComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
