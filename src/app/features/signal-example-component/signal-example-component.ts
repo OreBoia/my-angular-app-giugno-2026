@@ -8,14 +8,14 @@ import { Component, computed, effect, signal } from '@angular/core';
 })
 export class SignalExampleComponent
 {
-  counter = signal(0)
-  name = signal("Marco")
+  counter = signal<number>(0)
+  name = signal<string>("Marco")
 
-  double = computed(() => {
+  double = computed<number>(() => {
     return this.counter() * 2
   })
 
-  saluto = computed(() => 'Ciao, ' + this.name() + '!')
+  saluto = computed<string>(() => 'Ciao, ' + this.name() + '!')
 
   logRighe: string[] = []
   private _log = effect(() => {

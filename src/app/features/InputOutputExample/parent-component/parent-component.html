@@ -1,4 +1,8 @@
 <p>parent-component works!</p>
-<p>Counter (Parent): {{counter}}</p>
+<!-- <p>Counter (Parent): {{counter}}</p> -->
 
-<app-child-component [childCounter]="counter" (counterChange)="onCounterChanged($event)"></app-child-component>
+<!-- <app-child-component [childCounter]="counter" (counterChange)="onCounterChanged($event)"></app-child-component> -->
+
+<p>Counter Signal (Parent): {{counterSignal()}}</p>
+
+<app-child-component [childCounterSignal]="counterSignal()" (counterChangeSignal)="onCounterChangedSignal($event)"></app-child-component>
