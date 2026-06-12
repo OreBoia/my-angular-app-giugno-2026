@@ -10,6 +10,7 @@ import { RegistrationComponent } from "./features/registration-component/registr
 import { LoginComponent } from "./features/login-component/login-component";
 import { ParentComponent } from "./features/InputOutputExample/parent-component/parent-component";
 import { SignalExampleComponent } from "./features/signal-example-component/signal-example-component";
+import { ItemListComponent } from "./features/item-list-component/item-list-component";
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,7 @@ import { SignalExampleComponent } from "./features/signal-example-component/sign
     ImageComponent,
     BindingComponent,
     DirectivesComponent,
-    RegistrationComponent, LoginComponent, ParentComponent, SignalExampleComponent],
+    RegistrationComponent, LoginComponent, ParentComponent, SignalExampleComponent, ItemListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

@@ -1,0 +1,12 @@
+<h1>ITEM LIST INJECTION</h1>
+@for(item of items; track item){
+  <p> - {{item}}</p>
+}
+<input [(ngModel)]="itemToAdd" type="text">
+<button (click)="addItem()">Add Item</button>
+
+<button (click)="updateServiceList()">Update Original Item List</button>
+
+<!-- @for(item of dataService.getItems(); track item){
+  <p> - {{item}}</p>
+} -->
