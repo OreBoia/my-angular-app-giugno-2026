@@ -1,0 +1,8 @@
+<h1>ITEM LIST</h1>
+
+<p>Totale elementi: {{ itemsCount() }}</p>
+<button (click)="addSampleItem()">Aggiungi elemento</button>
+
+@for(item of items(); track item){
+  <p>{{item}}</p>
+}
