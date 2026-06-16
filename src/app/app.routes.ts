@@ -5,6 +5,11 @@ import { SignalExampleComponent } from './features/signal-example-component/sign
 import { ParentComponent } from './features/InputOutputExample/parent-component/parent-component';
 import { ErrorPageComponent } from './features/pages/error-page-component/error-page-component';
 import { UserProfileComponent } from './features/pages/user-profile-component/user-profile-component';
+import { LoginPageComponent } from './features/pages/login-page-component/login-page-component';
+import { AdminPageComponent } from './features/pages/admin-page-component/admin-page-component';
+import { authGuard } from './core/guards/auth-guard';
+import { adminGuard } from './core/guards/admin-guard';
+import { SettingsPageComponent } from './features/pages/settings-page-component/settings-page-component';
 
 export const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -13,6 +18,18 @@ export const routes: Routes = [
 
   {path: 'signal-ex', component: SignalExampleComponent},
   {path: 'parent', component: ParentComponent},
+
+  {path: 'login', component: LoginPageComponent},
+
+  {
+    path: 'admin',
+    component: AdminPageComponent,
+    canActivate: [authGuard, adminGuard],
+    canActivateChild: [adminGuard],
+    children: [
+      {path: 'settings', component: SettingsPageComponent}
+    ]
+  },
 
   {path: 'user/:id', component: UserProfileComponent},
 
