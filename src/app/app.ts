@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { BaseComponent } from './features/base-component/base-component';
 import { TitleComponent } from './features/component-exercise/title-component/title-component';
 import { ParagraphComponent } from './features/component-exercise/paragraph-component/paragraph-component';
@@ -15,13 +15,18 @@ import { ItemListComponent } from "./features/item-list-component/item-list-comp
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet,
-    BaseComponent,
-    TitleComponent,
-    ParagraphComponent,
-    ImageComponent,
-    BindingComponent,
-    DirectivesComponent,
-    RegistrationComponent, LoginComponent, ParentComponent, SignalExampleComponent, ItemListComponent],
+            RouterModule,
+            BaseComponent,
+            TitleComponent,
+            ParagraphComponent,
+            ImageComponent,
+            BindingComponent,
+            DirectivesComponent,
+            RegistrationComponent,
+            LoginComponent,
+            ParentComponent,
+            SignalExampleComponent,
+            ItemListComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
