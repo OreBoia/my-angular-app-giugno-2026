@@ -39,6 +39,32 @@ app.post('/api/tasks', async (req, res) => {
   }
 });
 
+// PATCH toggle completato
+app.patch('/api/tasks/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Toggle stato
+    await db.query('UPDATE tasks SET completed = NOT completed WHERE id = ?', [id]);
+    const [rows] = await db.query('SELECT * FROM tasks WHERE id = ?', [id]);
+    res.json(rows[0]);
+  } catch (error) {
+    console.error('Errore PATCH task', error);
+    res.status(500).json({ error: 'Errore toggle task' });
+  }
+});
+
+// DELETE elimina task
+app.delete('/api/tasks/:id', async (req, res) => {
+  const { id } = req.params;
+  try {
+    await db.query('DELETE FROM tasks WHERE id = ?', [id]);
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Errore DELETE task', error);
+    res.status(500).json({ error: 'Errore eliminazione task' });
+  }
+});
+
 async function startServer() {
   try {
     await db.initDatabase();

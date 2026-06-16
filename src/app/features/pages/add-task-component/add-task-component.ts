@@ -1,10 +1,11 @@
 import { Task } from './../../../core/services/task-rest-service';
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { TaskRestService } from '../../../core/services/task-rest-service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-task-component',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './add-task-component.html',
   styleUrl: './add-task-component.css',
 })
@@ -35,5 +36,40 @@ export class AddTaskComponent implements OnInit
         },
         error: err => this.errorMsg = err.message
       })
+  }
+
+  addTask() {
+    if (!this.title.trim() || !this.description.trim()) return;
+    this.taskServ.addTask({ title: this.title, description: this.description }).subscribe({
+      next: task => {
+        this.loadedTasks.update(tasks => [...tasks, task]);
+        this.title = '';
+        this.description = '';
+        this.errorMsg = '';
+      },
+      error: err => this.errorMsg = err.message
+    });
+  }
+
+  toggleTask(id: number) {
+    this.taskServ.toggleTask(id).subscribe({
+      next: updatedTask => {
+        this.loadedTasks.update(tasks =>
+          tasks.map(task => task.id === updatedTask.id ? updatedTask : task)
+        );
+        this.errorMsg = '';
+      },
+      error: err => this.errorMsg = err.message
+    });
+  }
+
+  deleteTask(id: number) {
+    this.taskServ.deleteTask(id).subscribe({
+      next: () => {
+        this.loadedTasks.update(tasks => tasks.filter(task => task.id !== id));
+        this.errorMsg = '';
+      },
+      error: err => this.errorMsg = err.message
+    });
   }
 }

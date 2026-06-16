@@ -34,4 +34,24 @@ export class TaskRestService
       })
     )
   }
+
+  // Toggle completato
+  toggleTask(id: number): Observable<Task> {
+    return this.http.patch<Task>(`${this.apiUrl}/${id}`, {}).pipe(
+      catchError(err => {
+        console.error('Errore toggle task', err);
+        return throwError(() => new Error('Errore nel cambio stato della task.'));
+      })
+    );
+  }
+
+  // Elimina task
+  deleteTask(id: number): Observable<{ success: boolean }> {
+    return this.http.delete<{ success: boolean }>(`${this.apiUrl}/${id}`).pipe(
+      catchError(err => {
+        console.error('Errore eliminazione task', err);
+        return throwError(() => new Error('Errore nell\'eliminazione della task.'));
+      })
+    );
+  }
 }
