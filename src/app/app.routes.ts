@@ -12,6 +12,7 @@ import { adminGuard } from './core/guards/admin-guard';
 import { SettingsPageComponent } from './features/pages/settings-page-component/settings-page-component';
 import { EditPageComponent } from './features/pages/edit-page-component/edit-page-component';
 import { unsavedChangesGuard } from './core/guards/unsaved-changes-guard';
+import { AddTaskComponent } from './features/pages/add-task-component/add-task-component';
 
 export const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -36,6 +37,8 @@ export const routes: Routes = [
   {path: "edit", component: EditPageComponent, canDeactivate: [unsavedChangesGuard]},
 
   {path: 'user/:id', component: UserProfileComponent},
+
+  {path: 'task', component:AddTaskComponent},
 
   {path: '**', component: ErrorPageComponent }
 ];
